@@ -582,6 +582,7 @@ private static class Converter {
         List nodeAsList = new ArrayList();
         nodeAsList.add(node.id);
         nodeAsList.addAll(Converter.NodeToList(node));
+        nodeAsList.remove(1);
         List res = syncOps.call(METHOD_UPDATE_NODE, nodeAsList);
         return (Boolean)((List) res.get(0)).get(0);
     }
